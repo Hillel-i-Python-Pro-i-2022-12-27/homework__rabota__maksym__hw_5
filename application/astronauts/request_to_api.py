@@ -1,16 +1,15 @@
+from http import HTTPStatus
+
 import requests
 
 from application.logging.loggers import get_core_logger
 
 
-def request_astronauts():
+def get_astronauts():
     logger = get_core_logger()
     url = "http://api.open-notify.org/astros.json"
+    response = requests.get(url,)
 
-    with requests.Session() as session:
-        response = session.get(url)
-        logger.info(f"{response=}")
-        response_json = response.json()
-        logger.info(f"{response_json}")
+    if response.status_code not in (HTTPStatus.OK,):
+        return response("ERROR: Something went wrong", status=response.status_code)
 
-        return response_json
