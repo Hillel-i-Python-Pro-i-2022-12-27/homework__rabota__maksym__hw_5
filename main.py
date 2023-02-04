@@ -1,5 +1,5 @@
 from application.astronauts.amount_of_astronauts import astronauts
-from application.average.get_csv import get_csv
+from application.average.avarage_params import average_values
 from application.logging.init_logging import init_logging
 from application.users_generator.users_file import users_file
 
@@ -12,7 +12,7 @@ def main() -> None:
     users_file()
 
     # Get *.csv file from Google Drive and processing data
-    get_csv()
+    average_values()
 
 
 if __name__ == "__main__":

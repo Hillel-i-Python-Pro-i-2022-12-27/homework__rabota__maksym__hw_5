@@ -3,7 +3,8 @@ from application.config.paths import FILES_OUTPUT_PATH
 from application.logging.loggers import get_core_logger
 
 
-def astronauts(content=request_astronauts()):
+def astronauts():
+    content = request_astronauts()
     logger = get_core_logger()
     path_to_file = FILES_OUTPUT_PATH.joinpath("astronauts.txt")
 

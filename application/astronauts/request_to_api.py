@@ -11,6 +11,5 @@ def request_astronauts():
         response = session.get(url)
         logger.info(f"{response=}")
         response_json = response.json()
-        logger.info(f"{response_json}")
 
         return response_json
